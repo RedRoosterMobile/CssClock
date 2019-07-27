@@ -1,0 +1,31 @@
+.hero-circle {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 1px 8px rgba(34,34,34,0.3), inset 0 1px 8px rgba(34,34,34,0.3);
+  background: url(background.jpg) 0 50%;
+  background-size: 100% 100%;
+}
+
+.hero-hour {
+  background: url(hour_handle_full_width-height_9.png) 0 0% no-repeat;
+}
+.hero-minute {
+  background: url(minute_handle_full_width-height_12.png) 0 0% no-repeat;
+}
+.hero-second {
+  background: url(second_handle_full_width-height_12.png) 0 0% no-repeat;
+}
+
+.hero-hour, .hero-minute, .hero-second {
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  position:absolute;
+  top:0;
+  left:0;
+  -ms-transform-origin:50% 50%;
+  transform-origin:50% 50%;
+}
+
