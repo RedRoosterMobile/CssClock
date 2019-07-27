@@ -1,4 +1,4 @@
-var hourElement, minuteElement, secondElement;
+var hourElement, minuteElement, secondElement, lastTimestamp;
 
 function updateClock() {
   var date = new Date();
@@ -12,7 +12,12 @@ function updateClock() {
 }
 
 function timedUpdate(timestamp) {
-  updateClock();
+  if (!lastTimestamp) lastTimestamp = timestamp;
+
+  if (timestamp - lastTimestamp > 900) {
+    updateClock();
+    lastTimestamp = timestamp;
+  }
   window.requestAnimationFrame(timedUpdate);
 }
 
@@ -20,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
   hourElement = document.getElementById("hour");
   minuteElement = document.getElementById("minute");
   secondElement = document.getElementById("second");
+  updateClock();
   timedUpdate();
   requestAnimationFrame(timedUpdate);
 });
