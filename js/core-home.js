@@ -4,14 +4,19 @@ function updateClock() {
     minute = date.getMinutes() * 6 + second / 60,
     hour = ((date.getHours() % 12) / 12) * 360 + 90 + minute / 12;
 
-  $("#hour").css("transform", "rotate(" + hour + "deg)");
-  $("#minute").css("transform", "rotate(" + minute + "deg)");
-  $("#second").css("transform", "rotate(" + second + "deg)");
+  document.getElementById("hour").style =
+    "transform: " + "rotate(" + hour + "deg)";
+  document.getElementById("minute").style =
+    "transform: " + "rotate(" + minute + "deg)";
+  document.getElementById("second").style =
+    "transform: " + "rotate(" + second + "deg)";
 }
 
 function timedUpdate() {
   updateClock();
-  setTimeout(timedUpdate, 0);
+  setTimeout(timedUpdate, 1000);
 }
 
-timedUpdate();
+document.addEventListener("DOMContentLoaded", function() {
+  timedUpdate();
+});
