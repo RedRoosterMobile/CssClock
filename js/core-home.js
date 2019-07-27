@@ -11,14 +11,14 @@ function updateClock() {
   secondElement.style = "transform: " + "rotate(" + second + "deg)";
 }
 
-function timedUpdate(timestamp) {
+function tick(timestamp) {
   if (!lastTimestamp) lastTimestamp = timestamp;
 
   if (timestamp - lastTimestamp > 900) {
     updateClock();
     lastTimestamp = timestamp;
   }
-  window.requestAnimationFrame(timedUpdate);
+  window.requestAnimationFrame(tick);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -26,6 +26,5 @@ document.addEventListener("DOMContentLoaded", function() {
   minuteElement = document.getElementById("minute");
   secondElement = document.getElementById("second");
   updateClock();
-  timedUpdate();
-  requestAnimationFrame(timedUpdate);
+  requestAnimationFrame(tick);
 });
