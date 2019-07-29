@@ -14,7 +14,7 @@ function updateClock() {
 function tick(timestamp) {
   if (!lastTimestamp) lastTimestamp = timestamp;
 
-  if (timestamp - lastTimestamp > 900) {
+  if (timestamp - lastTimestamp > 499) {
     updateClock();
     lastTimestamp = timestamp;
   }
