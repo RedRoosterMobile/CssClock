@@ -3,7 +3,7 @@
   height: 150px;
   position: relative;
   border-radius: 50%;
-  box-shadow: 0 1px 8px rgba(34,34,34,0.3), inset 0 1px 8px rgba(34,34,34,0.3);
+  box-shadow: 0 1px 8px rgba(34,34,34,.3), inset 0 1px 8px rgba(34,34,34,.3);
   background: url(background.jpg) 0 50%;
   background-size: 100% 100%;
 }
@@ -16,6 +16,10 @@
 }
 .hero-second {
   background: url(second_handle_full_width-height_12.png) 0 0% no-repeat;
+  /*
+    transition: transform .5s ease-in-out;
+    direction? fix.. 359 => 360/0
+  */
 }
 
 .hero-hour, .hero-minute, .hero-second {
